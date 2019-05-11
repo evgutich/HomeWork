@@ -3,6 +3,15 @@ package hw_1;
 import java.util.Scanner;
 
 public class HW1FuncEx2 {
+
+    static void housePlaced() {
+        System.out.println("Дома помещаются на участке");
+    }
+    static void sizeNotValid() {
+        System.out.println("Размер не может иметь нулевое или отрицательное значение");
+    }
+
+
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Введите размеры первого дома: ");
@@ -11,7 +20,7 @@ public class HW1FuncEx2 {
         if (a > 0 && b > 0) {
             System.out.println("a=" + a + " b=" + b);
         } else {
-            System.out.println("Размер стены дома не может иметь нулевое или отрицательное значение");
+            sizeNotValid();
             System.exit(0);
         }
         System.out.println("Введите размеры второго дома: ");
@@ -20,7 +29,7 @@ public class HW1FuncEx2 {
         if (c > 0 && d > 0) {
             System.out.println("c=" + c + " d=" + d);
         } else {
-            System.out.println("Размер стены дома не может иметь нулевое или отрицательное значение");
+            sizeNotValid();
             System.exit(0);
         }
         System.out.println("Введите размеры участка: ");
@@ -29,17 +38,17 @@ public class HW1FuncEx2 {
         if (e > 0 && f > 0) {
             System.out.println("e=" + e + " f=" + f);
         } else {
-            System.out.println("Размер стороны участка не может иметь нулевое или отрицательное значение");
+            sizeNotValid();
             System.exit(0);
         }
         if ((a + c <= e) && (b + d <= f)) {
-            System.out.println("Дома помещаются на участке");
+            housePlaced();
         } else if ((a + d <= e) && (b + c <= f)) {
-            System.out.println("Дома помещаются на участке");
+            housePlaced();
         } else if ((a + c <= f) && (b + d <= e)) {
-            System.out.println("Дома помещаются на участке");
+            housePlaced();
         } else if ((a + d <= f) && (b + c <= e)) {
-            System.out.println("Дома помещаются на участке");
+            housePlaced();
         } else System.out.println("Дома не помещаются на участке");
     }
 }
