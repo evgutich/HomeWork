@@ -23,7 +23,7 @@ public class HW1FuncEx1 {
     public static void main(String[] args) {
 
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Введите день: ");
+                System.out.println("Введите день: ");
         int day = scanner.nextInt();
         if (!isDayValid(day)) {
             invalidDateForm();
@@ -35,6 +35,7 @@ public class HW1FuncEx1 {
             invalidDateForm();
             return;
         }
+
         System.out.println("Введите год: ");
         int year = scanner.nextInt();
         if (year >= 0) {
