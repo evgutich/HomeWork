@@ -10,10 +10,11 @@ public class HWStringEx2 {
         System.out.println(toArabic(str));
     }
 
+
     public static int toArabic(String number) {
-        number.toUpperCase();
+        number = number.toUpperCase();
         int num = 0;
-        if (number.equals("")) num = num + 0;
+        if (number.equals("")) return num;
         if (number.startsWith("M")) num = 1000 + toArabic(remove(number, 1));
         if (number.startsWith("CM")) num = 900 + toArabic(remove(number, 2));
         if (number.startsWith("D")) num = 500 + toArabic(remove(number,1));
