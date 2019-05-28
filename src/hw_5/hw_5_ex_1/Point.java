@@ -1,4 +1,4 @@
-package hw_5_ex_1;
+package hw_5.hw_5_ex_1;
 
 public final class Point {
 
