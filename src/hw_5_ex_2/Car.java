@@ -1,20 +1,20 @@
 package hw_5_ex_2;
 
-class Car {
+public class Car {
 
     private double amountOfPetrol;
     private double fuelConsumption;
     private double mileage;
 
-    protected Car(double fuelConsumption) {
+    public Car(double fuelConsumption) {
         setFuelConsumption(fuelConsumption);
     }
 
-    protected double getAmountOfPetrol() {
+    public double getAmountOfPetrol() {
         return amountOfPetrol;
     }
 
-    protected void setAmountOfPetrol(double amountOfPetrol) {
+    private void setAmountOfPetrol(double amountOfPetrol) {
         this.amountOfPetrol = amountOfPetrol;
     }
 
@@ -22,15 +22,15 @@ class Car {
         return fuelConsumption;
     }
 
-    protected void setFuelConsumption(double fuelConsumption) {
+    private void setFuelConsumption(double fuelConsumption) {
         this.fuelConsumption = fuelConsumption;
     }
 
-    protected double getMileage() {
+    public double getMileage() {
         return mileage;
     }
 
-    protected void setMileage(double mileage) {
+    private void setMileage(double mileage) {
         this.mileage = mileage;
     }
 

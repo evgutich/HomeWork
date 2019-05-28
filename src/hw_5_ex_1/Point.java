@@ -40,7 +40,9 @@ public final class Point {
     }
 
     public Point translate(int divX, int divY) {
-        return new Point(getX() + divX, getY() + divY);
+        setX(getX() + divX);
+        setY(getY() + divY);
+        return this;
     }
 
     public Point scale(int n) {
