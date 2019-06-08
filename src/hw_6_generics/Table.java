@@ -1,22 +1,23 @@
 package hw_6_generics;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class Table<K, V> {
-    private ArrayList<Entry> list;
+    private List<Entry<K, V>> list;
 
     public Table() {
         this.list = new ArrayList<>();
     }
 
-    public void add(Entry entry) {
+    public void add(Entry<K, V> entry) {
         list.add(entry);
     }
 
     public V getValueByKey(K key) {
-        for (Entry entry : list) {
+        for (Entry<K, V> entry : list) {
             if (entry.getKey().equals(key)) {
-                return (V) entry.getValue();
+                return entry.getValue();
             }
         }
         return null;
