@@ -19,4 +19,8 @@ public class Rectangle extends Quadrangle implements RectangleInterface {
         return Math.sqrt(Math.pow(getA(), 2) + Math.pow(getB(), 2));
     }
 
+    @Override
+    public boolean checkRectangle() {
+        return true;
+    }
 }

@@ -5,10 +5,10 @@ public final class ShapeUtils {
     }
 
     public static boolean checkRectangle (Figure figure){
-        return figure instanceof Rectangle;
+        return figure.checkRectangle();
     }
 
     public static boolean checkTriangle (Figure figure){
-        return figure instanceof Triangle;
+        return figure.checkTriangle();
     }
 }

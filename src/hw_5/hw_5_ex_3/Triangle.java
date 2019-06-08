@@ -54,4 +54,9 @@ public class Triangle extends Figure {
                 ", c=" + c +
                 '}';
     }
+
+    @Override
+    public boolean checkTriangle() {
+        return true;
+    }
 }

@@ -6,4 +6,11 @@ public abstract class Figure implements Calculator{
         return  (this.getSquare() == figure.getSquare());
     }
 
+    public boolean checkTriangle(){
+        return false;
+    }
+
+    public boolean checkRectangle(){
+        return false;
+    }
 }
