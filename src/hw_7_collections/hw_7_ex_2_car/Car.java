@@ -1,5 +1,7 @@
 package hw_7_collections.hw_7_ex_2_car;
 
+import java.util.Objects;
+
 public abstract class Car {
     private String brand;
     private String model;
@@ -13,6 +15,23 @@ public abstract class Car {
         this.bodyStyle = bodyStyle;
         this.engineCapacity = engineCapacity;
         this.manufacturedYear = manufacturedYear;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Car car = (Car) o;
+        return Double.compare(car.engineCapacity, engineCapacity) == 0 &&
+                manufacturedYear == car.manufacturedYear &&
+                brand.equals(car.brand) &&
+                model.equals(car.model) &&
+                bodyStyle.equals(car.bodyStyle);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(brand, model, bodyStyle, engineCapacity, manufacturedYear);
     }
 
     @Override

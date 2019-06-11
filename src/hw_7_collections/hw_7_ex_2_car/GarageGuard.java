@@ -4,6 +4,7 @@ public class GarageGuard {
     public static void main(String[] args) {
         Car mazda = new Roadster("Mazda", "RX-7", 1.3, 1999);
         Car opel = new Hatchbaсk("Opel", "Astra", 1.4, 2000);
+        Car opel2 = new Hatchbaсk("Opel", "Astra", 1.4, 2000);
         Car fiat = new Minivan("Fiat", "Multipla", 1.6, 2001);
         Car vw = new Sedan("VW", "Passat", 1.8, 2002);
 
@@ -13,6 +14,7 @@ public class GarageGuard {
         danaMall.parking(fiat);
         danaMall.parking(fiat);
         danaMall.parking(vw);
+        danaMall.parking(opel2);
 
         danaMall.camera();
 
