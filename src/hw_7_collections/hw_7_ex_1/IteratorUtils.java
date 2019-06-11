@@ -17,7 +17,7 @@ public class IteratorUtils {
             for (int i = 0; i < num.length - 1; i = i + 2) {
                 list.add(new Pair(num[i], num[i + 1]));
             }
-            list.add(new Pair(num[num.length - 1], 0));
+            list.add(new Pair(num[num.length - 1], num[num.length - 1]));
         }
         return new PairMaxIterable(list);
     }

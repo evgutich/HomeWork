@@ -14,7 +14,7 @@ public class IteratorTest {
 
         System.out.println();
 
-        for(Integer max : maxPairs(1,2,3,4,5,6,7)) {
+        for(Integer max : maxPairs(1,2,3,4,5,6,-5)) {
             System.out.print(max + " ");
         }
     }
