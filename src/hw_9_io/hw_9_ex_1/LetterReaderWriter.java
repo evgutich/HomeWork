@@ -13,24 +13,25 @@ public class LetterReaderWriter {
     private static String PATH = "D:\\pvt\\Java\\HomeWork\\src\\hw_9_io";
 
     public static Map<Character, Integer> readText() throws IOException {
-        BufferedReader reader = Files.newBufferedReader(Paths.get(PATH + "\\poem"));
         Map<Character, Integer> letters = new TreeMap<>();
-        String line;
-        while ((line = reader.readLine()) != null) {
-            for (char letter : line.replaceAll("\\s+", "").toLowerCase().toCharArray()) {
-                if (letters.get(letter) == null) {
-                    letters.put(letter, 1);
-                } else {
-                    letters.put(letter, letters.get(letter) + 1);
+        try (BufferedReader reader = Files.newBufferedReader(Paths.get(PATH + "\\poem"))){
+            String line;
+            while ((line = reader.readLine()) != null) {
+                for (char letter : line.replaceAll("\\s+", "").toLowerCase().toCharArray()) {
+                    if (letters.get(letter) == null) {
+                        letters.put(letter, 1);
+                    } else {
+                        letters.put(letter, letters.get(letter) + 1);
+                    }
                 }
+                line.toCharArray();
             }
-            line.toCharArray();
         }
-        BufferedWriter out = new BufferedWriter(new FileWriter(PATH + "\\letters.txt"));
-        for (Map.Entry<Character, Integer> entry : letters.entrySet()) {
-            out.write(entry.getKey() + " - " + entry.getValue() + "\n");
+        try (BufferedWriter out = new BufferedWriter(new FileWriter(PATH + "\\letters.txt"))){
+            for (Map.Entry<Character, Integer> entry : letters.entrySet()) {
+                out.write(entry.getKey() + " - " + entry.getValue() + "\n");
+            }
         }
-        out.close();
         return letters;
     }
 }

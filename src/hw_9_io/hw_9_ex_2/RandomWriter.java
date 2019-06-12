@@ -12,11 +12,11 @@ public class RandomWriter {
     private Random rnd = new Random();
 
     public void writeRandomNumbers() throws IOException {
-        BufferedWriter out = new BufferedWriter(new FileWriter(PATH + "\\randomNumbers.txt"));
-        for (int i = 0; i < 10; i++) {
-            out.write(rnd.nextInt(100) + "\n");
+        try (BufferedWriter out = new BufferedWriter(new FileWriter(PATH + "\\randomNumbers.txt"))) {
+            for (int i = 0; i < 10; i++) {
+                out.write(rnd.nextInt(100) + "\n");
+            }
         }
-        out.close();
     }
 
     public void sortRandomNumbers() throws IOException {
@@ -24,8 +24,8 @@ public class RandomWriter {
         List<Integer> list = new ArrayList<>();
         while (sc.hasNext()) list.add(sc.nextInt());
         Collections.sort(list);
-        FileWriter writer = new FileWriter(PATH + "\\sortedRandomNumbers.txt");
-        for (int cur : list) writer.write(cur + "\n");
-        writer.close();
+        try (FileWriter writer = new FileWriter(PATH + "\\sortedRandomNumbers.txt")) {
+            for (int cur : list) writer.write(cur + "\n");
+        }
     }
 }
