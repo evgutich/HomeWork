@@ -16,7 +16,7 @@ public class ValueReader {
         return doubles;
     }
 
-    public static double sumOfValues() throws Exception {
+    public static double sumOfValues() throws NumberFormatException {
         double sum = 0;
         for (int i = 0; i < 2; i++) {
             for (double number : readValues()) {
