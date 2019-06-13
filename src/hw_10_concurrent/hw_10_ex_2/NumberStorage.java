@@ -9,7 +9,7 @@ public class NumberStorage {
     private final ReentrantReadWriteLock.WriteLock writeLock = rwLock.writeLock();
     private final ReentrantReadWriteLock.ReadLock readLock = rwLock.readLock();
     private LinkedList<Integer> storage;
-    Random rnd = new Random();
+    private Random rnd = new Random();
 
     public NumberStorage(LinkedList<Integer> storage) {
         this.storage = storage;
