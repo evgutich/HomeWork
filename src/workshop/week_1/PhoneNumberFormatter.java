@@ -13,10 +13,6 @@ public class PhoneNumberFormatter {
         this.phoneNumber = phoneNumber;
     }
 
-    public String stringNumber(List number) {
-        return number.toString().replaceAll("[^0-9]+", "");
-    }
-
     public String formatNumber(List phoneNumber) {
         String number = phoneNumber.toString().replaceAll("[^0-9]+", "");
         return "(" + number.substring(0, 3) + ")" + number.substring(3, 6) + "-" + number.substring(6, 10);
